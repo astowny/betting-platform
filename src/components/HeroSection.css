@@ -1,0 +1,223 @@
+.hero-section {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(135deg, #0a2a5a 0%, #1a4a8a 50%, #2a6aba 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(0, 100, 200, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 150, 255, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #0a2a5a 0%, #1a4a8a 50%, #2a6aba 100%);
+}
+
+.underwater-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shark-container {
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shark {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: swim 8s linear infinite;
+}
+
+.fish-container {
+  position: absolute;
+  left: 15%;
+  top: 20%;
+}
+
+.fish {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: fishSwim 10s linear infinite;
+}
+
+.fish:nth-child(1) {
+  animation-delay: 0s;
+  left: 0;
+}
+
+.fish:nth-child(2) {
+  animation-delay: -3s;
+  left: 50px;
+  top: 30px;
+}
+
+.fish:nth-child(3) {
+  animation-delay: -6s;
+  left: 100px;
+  top: -20px;
+}
+
+.coral {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  font-size: 3rem;
+  opacity: 0.7;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.bonus-badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.badge-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.bonus-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.join-button {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  transition: all 0.3s ease;
+}
+
+.join-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.carousel-dots {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+}
+
+.hero-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.nav-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes swim {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes fishSwim {
+  0% { transform: translateX(0px) translateY(0px); }
+  25% { transform: translateX(30px) translateY(-10px); }
+  50% { transform: translateX(60px) translateY(5px); }
+  75% { transform: translateX(30px) translateY(10px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+  
+  .bonus-title {
+    font-size: 1.8rem;
+  }
+  
+  .shark {
+    font-size: 2.5rem;
+  }
+  
+  .join-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}

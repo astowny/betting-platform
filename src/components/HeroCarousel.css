@@ -1,0 +1,318 @@
+.hero-carousel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-carousel-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.underwater-blue {
+  background: linear-gradient(135deg, #0a2a5a 0%, #1a4a8a 50%, #2a6aba 100%);
+}
+
+.underwater-green {
+  background: linear-gradient(135deg, #0a5a2a 0%, #1a8a4a 50%, #2aba6a 100%);
+}
+
+.underwater-purple {
+  background: linear-gradient(135deg, #2a0a5a 0%, #4a1a8a 50%, #6a2aba 100%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(0, 100, 200, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 150, 255, 0.2) 0%, transparent 50%);
+}
+
+.underwater-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.creatures-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.creature {
+  position: absolute;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: float 6s ease-in-out infinite;
+}
+
+.creature-1 {
+  right: 10%;
+  top: 20%;
+  font-size: 4rem;
+  animation: swim 8s linear infinite;
+}
+
+.creature-2 {
+  left: 15%;
+  top: 30%;
+  animation-duration: 10s;
+}
+
+.creature-3 {
+  left: 25%;
+  top: 60%;
+  animation-duration: 7s;
+}
+
+.creature-4 {
+  right: 20%;
+  bottom: 20%;
+  animation-duration: 9s;
+}
+
+.creature-5 {
+  left: 5%;
+  bottom: 10%;
+  font-size: 3rem;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.bonus-badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+}
+
+.badge-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.bonus-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.join-button {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  transition: all 0.3s ease;
+}
+
+.join-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+/* Navigation Arrows positioned over the carousel on the right */
+.hero-navigation-arrows {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  z-index: 30;
+}
+
+.hero-nav-button {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hero-nav-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.hero-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hero-nav-button:disabled:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: none;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Pagination */
+.hero-swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.hero-swiper-pagination :global(.swiper-pagination-bullet) {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.hero-swiper-pagination :global(.swiper-pagination-bullet-active) {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes swim {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 300px;
+  }
+
+  .hero-navigation-arrows {
+    right: 15px;
+  }
+
+  .hero-slide {
+    height: 300px;
+  }
+
+  .bonus-title {
+    font-size: 1.8rem;
+  }
+
+  .creature-1 {
+    font-size: 2.5rem;
+  }
+
+  .join-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+
+  .hero-nav-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-nav-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero-navigation-arrows {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-navigation-arrows {
+    right: 10px;
+  }
+
+  .hero-nav-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hero-nav-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-navigation-arrows {
+    gap: 6px;
+  }
+
+  .bonus-title {
+    font-size: 1.5rem;
+  }
+}
